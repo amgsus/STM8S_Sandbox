@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="STVD Project" pattern="file:*.c||file:*.h||file:*.inc||file:CMakeLists.txt" />
+</component>
