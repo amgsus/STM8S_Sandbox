@@ -1,3 +1,5 @@
+#include "platform.h"
+
 void init()
 {
     // ...

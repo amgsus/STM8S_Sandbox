@@ -7,4 +7,8 @@
 #include "csmc_masked.h"
 #endif
 
+typedef void FAR_MODIFIER (*InterruptHandlerProcedure_t)(void);
+
+#define SFR(name, addr) unsigned char name AT_MEMADDR(addr)
+
 # endif // End of Include Guard //

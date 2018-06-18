@@ -6,7 +6,9 @@
 #define ISR(vect) @far @interrupt void vect(void)
 #define DECLARE_ISR(vect) extern ISR(vect)
 
-typedef void @far (*InterruptHandlerProcedure_t)(void);
+#define FAR_MODIFIER @far
+
+#define AT_MEMADDR(addr) @addr
 
 #endif
 

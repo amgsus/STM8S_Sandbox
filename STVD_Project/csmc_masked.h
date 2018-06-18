@@ -4,6 +4,8 @@
 #define ISR(vect) void vect(void)
 #define DECLARE_ISR(vect) extern ISR(vect)
 
-typedef void (*InterruptHandlerProcedure_t)(void);
+#define FAR_MODIFIER /* Nothing */
+
+#define AT_MEMADDR(addr) /* Nothing */
 
 # endif // End of Include Guard //
