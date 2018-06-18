@@ -39,6 +39,11 @@
 #define F_HSIDIV    (F_HSI / HSI_DIV_FACTOR)
 
 /**
+ * Master (multiplexed) clock frequency.
+ */
+#define F_MASTER    (F_HSIDIV)
+
+/**
  * CPU clock frequency.
  */
 #define F_CPU       (F_MASTER / F_CPU_DIV_FACTOR)
