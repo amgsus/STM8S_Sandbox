@@ -6,11 +6,14 @@ project(STM8S_Sandbox C)
 
 set(CMAKE_C_STANDARD 99)
 
+add_definitions(-DUSING_CLION) #[[ Only when using external code editor ]]
+
 ## Adds some definitions.
 
-add_definitions(-DUSING_CLION)
-
 add_definitions(-DSTM8S103F3_MCU)
+
+# add_definitions(-DHSI_DIV_FACTOR=1)
+# add_definitions(-DF_CPU_DIV_FACTOR=1)
 
 ## Specify the directory where sources are stored.
 
