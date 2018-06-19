@@ -9,6 +9,7 @@
       <file path="$PROJECT_DIR$/Manual" />
       <file path="$PROJECT_DIR$/STVD_Project/Debug" />
       <file path="$PROJECT_DIR$/STVD_Project/Release" />
+      <file path="$PROJECT_DIR$/STVD_Project/STM8S103F3_Programmer" />
       <file path="$PROJECT_DIR$/Temp" />
     </excludeRoots>
   </component>
