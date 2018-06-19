@@ -5,6 +5,7 @@
 #include "comdefs.h"
 #include "hal.h"
 #include "gpio_macro.h"
+#include "gpio_setup.h"
 
 void delay_ms(uint16_t n);
 

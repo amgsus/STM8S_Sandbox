@@ -5,10 +5,10 @@ Keyword=ST7Project
 Number=1.3
 
 [Root.Source Files.clk_setup.c.Config.0]
-ExternDep= clk_setup.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h
+ExternDep= clk_setup.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h
 
 [Root.Source Files.delay.c.Config.0]
-ExternDep= delay.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h
+ExternDep= delay.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h
 
 [Root.Source Files.intvect.c.Config.0]
 ExternDep= intvect.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" stdint.h  cosmic.h csmc_production.h
@@ -17,4 +17,4 @@ ExternDep= intvect.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\
 ExternDep= main.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h"
 
 [Root.Source Files.program.c.Config.0]
-ExternDep= program.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h
+ExternDep= program.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h

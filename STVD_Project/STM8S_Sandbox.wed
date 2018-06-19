@@ -44,7 +44,7 @@ ptn_Child33=Bar-32
 
 [WorkState_v1_2.DockState.Bar-0]
 BarID=59419
-Bars=20
+Bars=22
 Bar#0=0
 Bar#1=59647
 Bar#2=0
@@ -65,6 +65,8 @@ Bar#16=0
 Bar#17=32768
 Bar#18=0
 Bar#19=0
+Bar#20=0
+Bar#21=0
 Style=0
 ExStyle=0
 PrevFloating=False
@@ -372,9 +374,9 @@ XPos=0
 YPos=28
 Docking=True
 MRUDockID=0
-MRUDockLeftPos=0
+MRUDockLeftPos=8
 MRUDockTopPos=28
-MRUDockRightPos=148
+MRUDockRightPos=156
 MRUDockBottomPos=58
 MRUFloatStyle=8196
 MRUFloatXPos=-2
@@ -629,7 +631,7 @@ MDIChild=False
 AutoHide=False
 AutoHidePinned=False
 LastAlignedDocking=0
-PctWidth=761660
+PctWidth=761659
 MRUFloatCX=94
 MRUFloatCY=30
 MRUHorzDockCX=94
@@ -768,10 +770,10 @@ XPos=1
 YPos=5
 Docking=True
 MRUDockID=0
-MRUDockLeftPos=1
-MRUDockTopPos=5
-MRUDockRightPos=1920
-MRUDockBottomPos=155
+MRUDockLeftPos=8
+MRUDockTopPos=26
+MRUDockRightPos=1927
+MRUDockBottomPos=176
 MRUFloatStyle=4
 MRUFloatXPos=-2
 MRUFloatYPos=0
@@ -1249,7 +1251,7 @@ ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 
 [WorkState_v1_2.Frames.MainFrame]
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDIAAAAAADEAAAAAAADEAAAAACOCAAAAA
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAAADIPPPPAADIPPPPPPPPPPPPPPPPPPPPDIAAAAAADEAAAAAAADEAAAAACOCAAAAA
 Title=ST Visual Develop - STM8S_Sandbox.stw
 
 [WorkState_v1_2.Frames.ChildFrames]
