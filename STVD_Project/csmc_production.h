@@ -10,6 +10,8 @@
 
 #define AT_MEMADDR(addr) @addr
 
+#define ASM(s) _asm(s)
+
 #endif
 
 # endif // End of Include Guard //

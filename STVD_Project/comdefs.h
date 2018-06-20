@@ -9,4 +9,7 @@
 #define BITSET(var, bit)    (var |=  BIT(bit))
 #define BITCLR(var, bit)    (var &= ~BIT(bit))
 
+#define SET(x, bitMask)     (x |=  (bitMask))
+#define CLEAR(x, bitMask)   (x &= ~(bitMask))
+
 # endif // End of Include Guard //

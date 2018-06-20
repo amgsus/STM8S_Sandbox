@@ -61,10 +61,10 @@ String.100.2=STM8 Cosmic
 String.100.3=ST7 Metrowerks V1.1
 String.100.4=Raisonance
 String.101.0=STM8 Cosmic
-String.102.0=C:\Program Files (x86)\Cosmic STM Compilers
+String.102.0=C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8
 String.103.0=
-String.104.0=Hstm8
-String.105.0=Lib
+String.104.0=CXSTM8\Hstm8
+String.105.0=CXSTM8\Lib
 String.106.0=Debug
 String.107.0=$(ProjectSFile).elf
 Int.108=0
@@ -83,10 +83,10 @@ String.100.0=STM8S103F3P
 
 [Root.Config.0.Settings.3]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 +mods0 -customDebCompat -customOpt-no -customC-pp -customLst -l -dSTM8S103F3_MCU $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.3.0=cxstm8 +mods0 -customDebCompat -customOpt-no -customC-pp -customLst -l -dSTM8S103F3_MCU -dENABLE_SERIAL_INTERFACE $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2018,6,19,9,51,41
+String.6.0=2018,6,20,21,54,15
 
 [Root.Config.0.Settings.4]
 String.2.0=Assembling $(InputFile)...
@@ -144,10 +144,10 @@ String.100.2=STM8 Cosmic
 String.100.3=ST7 Metrowerks V1.1
 String.100.4=Raisonance
 String.101.0=STM8 Cosmic
-String.102.0=C:\Program Files (x86)\Cosmic STM Compilers
+String.102.0=C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8
 String.103.0=
-String.104.0=Hstm8
-String.105.0=Lib
+String.104.0=CXSTM8\Hstm8
+String.105.0=CXSTM8\Lib
 String.106.0=Release
 String.107.0=stm8s103f3.elf
 Int.108=0
@@ -243,10 +243,10 @@ Int.1=0
 
 [Root.Source Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 +mods0 -customDebCompat -customOpt-no -customC-pp -customLst -l -dSTM8S103F3_MCU $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.3.0=cxstm8 +mods0 -customDebCompat -customOpt-no -customC-pp -customLst -l -dSTM8S103F3_MCU -dENABLE_SERIAL_INTERFACE $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2018,6,19,9,51,41
+String.6.0=2018,6,20,21,54,15
 
 [Root.Source Files.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
@@ -312,6 +312,11 @@ Next=Root.Source Files.program.c
 [Root.Source Files.program.c]
 ElemType=File
 PathName=program.c
+Next=Root.Source Files.serial.c
+
+[Root.Source Files.serial.c]
+ElemType=File
+PathName=serial.c
 
 [Root.Include Files]
 ElemType=Folder
@@ -339,10 +344,10 @@ Int.1=0
 
 [Root.Include Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 +mods0 -customDebCompat -customOpt-no -customC-pp -customLst -l -dSTM8S103F3_MCU $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.3.0=cxstm8 +mods0 -customDebCompat -customOpt-no -customC-pp -customLst -l -dSTM8S103F3_MCU -dENABLE_SERIAL_INTERFACE $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2018,6,19,9,51,41
+String.6.0=2018,6,20,21,54,15
 
 [Root.Include Files.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...

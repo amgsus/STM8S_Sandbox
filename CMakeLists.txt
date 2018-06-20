@@ -15,6 +15,8 @@ add_definitions(-DSTM8S103F3_MCU)
 # add_definitions(-DHSI_DIV_FACTOR=1)
 # add_definitions(-DF_CPU_DIV_FACTOR=1)
 
+add_definitions(-DENABLE_SERIAL_INTERFACE)
+
 ## Specify the directory where sources are stored.
 
 set(__PROJECT_DIR__ STVD_Project)

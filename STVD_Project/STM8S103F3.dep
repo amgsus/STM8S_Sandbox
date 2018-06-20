@@ -14,7 +14,10 @@ ExternDep= delay.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mo
 ExternDep= intvect.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" stdint.h  cosmic.h csmc_production.h
 
 [Root.Source Files.main.c.Config.0]
-ExternDep= main.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h"
+ExternDep= main.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h serial.h  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\stdbool.h"
 
 [Root.Source Files.program.c.Config.0]
-ExternDep= program.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h
+ExternDep= program.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h serial.h  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\stdbool.h"
+
+[Root.Source Files.serial.c.Config.0]
+ExternDep= serial.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h serial.h  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\stdbool.h"

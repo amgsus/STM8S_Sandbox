@@ -8,4 +8,6 @@
 
 #define AT_MEMADDR(addr) /* Nothing */
 
+#define ASM(s) /* Nothing */
+
 # endif // End of Include Guard //
