@@ -23,4 +23,20 @@
 #define UART_TEN    BIT(3)
 #define UART_REN    BIT(2)
 
+// TIMx_SR: Status Register #1
+
+#define TIM4_UIF     BIT(0)
+
+// TIMx_IER: Interrupt Enable Register
+
+#define TIM4_IER_UIE BIT(0)
+
+// TIM4_CR1 (TIM6_CR1): Control Register #1
+
+#define TIM4_ARPE   BIT(7)
+#define TIM4_OPM    BIT(3)
+#define TIM4_URS    BIT(2)
+#define TIM4_UDIS   BIT(1)
+#define TIM4_CEN    BIT(0)
+
 # endif // End of Include Guard //

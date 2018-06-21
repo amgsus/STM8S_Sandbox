@@ -12,10 +12,12 @@ add_definitions(-DUSING_CLION) #[[ Only when using external code editor ]]
 
 add_definitions(-DSTM8S103F3_MCU)
 
-# add_definitions(-DHSI_DIV_FACTOR=1)
-# add_definitions(-DF_CPU_DIV_FACTOR=1)
-
-add_definitions(-DENABLE_SERIAL_INTERFACE)
+add_definitions(-DHSI_DIV_FACTOR=1)
+add_definitions(-DF_CPU_DIV_FACTOR=1)
+add_definitions(-DENABLE_SERIAL_INTERFACE=1)
+add_definitions(-DENABLE_FREE_RUNNING_TIMER=1)
+add_definitions(-DTIME_BASE=1000)
+add_definitions(-DFREE_RUNNING_TIMER_ISR_CONTEXT=0)
 
 ## Specify the directory where sources are stored.
 

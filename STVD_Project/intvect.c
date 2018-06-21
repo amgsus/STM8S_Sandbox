@@ -5,7 +5,7 @@
 // ***      MCU:        STM8S103F3                                        *** //
 // ***      Toolchain:  CXSTM8                                            *** //
 // ***      Created:    Jun 17, 2018 09:24 PM                             *** //
-// ***      Modified:   Jun 19, 2018 10:26 PM                             *** //
+// ***      Modified:   Jun 21, 2018 03:46 PM                             *** //
 // ************************************************************************** //
 
 #include "stdint.h"
@@ -22,12 +22,20 @@ void _stext() {}
 extern void _stext();     /* startup routine */
 #endif
 
+// ISRs //
+
 ISR(NonHandledInterrupt) {
     while (1); // ToDo: In order to detected unexpected interrupts put a breakpoint here.
 }
 
 DECLARE_ISR(UART_RequestToTransmit_ISR);
 DECLARE_ISR(UART_DataRecept_ISR);
+
+#if FREE_RUNNING_TIMER_ISR_CONTEXT
+DECLARE_ISR(TIM4_OVF_ISR);
+#endif
+
+// Interrupt Vector Table //
 
 #define OPCODE 0x82 /* See PM0044 sheet */
 
@@ -57,7 +65,11 @@ InterruptTableEntry_t const _vectab[] = {
     {OPCODE, NonHandledInterrupt}, /* IRQ20 */
     {OPCODE, NonHandledInterrupt}, /* IRQ21 */
     {OPCODE, NonHandledInterrupt}, /* IRQ22 : ADC1 EOC */
+#if FREE_RUNNING_TIMER_ISR_CONTEXT
+    {OPCODE, TIM4_OVF_ISR},        /* IRQ23 : TIM4 Update/OVF */
+#else
     {OPCODE, NonHandledInterrupt}, /* IRQ23 : TIM4 Update/OVF */
+#endif
     {OPCODE, NonHandledInterrupt}, /* IRQ24 : Flash EOP/WR_PG_DIS */
     {OPCODE, NonHandledInterrupt}, /* IRQ25 */
     {OPCODE, NonHandledInterrupt}, /* IRQ26 */
