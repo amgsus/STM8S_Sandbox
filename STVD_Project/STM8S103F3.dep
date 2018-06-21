@@ -10,6 +10,10 @@ ExternDep= clk_setup.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM
 [Root.Source Files.delay.c.Config.0]
 ExternDep= delay.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h
 
+[Root.Source Files.free_run.c.Config.0]
+ExternDep= free_run.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" platform.h  stdint.h comdefs.h hal.h iostm8s103.h cosmic.h csmc_production.h  iostm8s103.inc f_cpu.h gpio_macro.h gpio_setup.h
+#warning cpstm8 free_run.c:8 "TIME_BASE was not specified. Using the default - 1 ms."
+
 [Root.Source Files.intvect.c.Config.0]
 ExternDep= intvect.c  "C:\Program Files (x86)\Cosmic STM Compilers\CXSTM8\HSTM8\mods0.h" stdint.h  cosmic.h csmc_production.h
 
