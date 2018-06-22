@@ -28,8 +28,12 @@ ISR(NonHandledInterrupt) {
     while (1); // ToDo: In order to detected unexpected interrupts put a breakpoint here.
 }
 
+#if ENABLE_SERIAL_INTERFACE
 DECLARE_ISR(UART_RequestToTransmit_ISR);
 DECLARE_ISR(UART_DataRecept_ISR);
+#endif
+
+DECLARE_ISR(ADC_EOC_AWI_ISR);
 
 #if FREE_RUNNING_TIMER_ISR_CONTEXT
 DECLARE_ISR(TIM4_OVF_ISR);
@@ -59,12 +63,17 @@ InterruptTableEntry_t const _vectab[] = {
     {OPCODE, NonHandledInterrupt}, /* IRQ14 : TIM2 CAPCOM */
     {OPCODE, NonHandledInterrupt}, /* IRQ15 */
     {OPCODE, NonHandledInterrupt}, /* IRQ16 */
+#if ENABLE_SERIAL_INTERFACE
     {OPCODE, UART_RequestToTransmit_ISR}, /* IRQ17 : UART1 TXE */
     {OPCODE, UART_DataRecept_ISR}, /* IRQ18 : UART1 RXNE */
+#else
+    {OPCODE, NonHandledInterrupt}, /* IRQ17 : UART1 TXE */
+    {OPCODE, NonHandledInterrupt}, /* IRQ18 : UART1 RXNE */
+#endif
     {OPCODE, NonHandledInterrupt}, /* IRQ19 : I2C */
     {OPCODE, NonHandledInterrupt}, /* IRQ20 */
     {OPCODE, NonHandledInterrupt}, /* IRQ21 */
-    {OPCODE, NonHandledInterrupt}, /* IRQ22 : ADC1 EOC */
+    {OPCODE, ADC_EOC_AWI_ISR},     /* IRQ22 : ADC1 EOC */
 #if FREE_RUNNING_TIMER_ISR_CONTEXT
     {OPCODE, TIM4_OVF_ISR},        /* IRQ23 : TIM4 Update/OVF */
 #else

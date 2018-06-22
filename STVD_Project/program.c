@@ -10,6 +10,16 @@
 
 #include "platform.h"
 #include "serial.h"
+#include "adc.h"
+#include "adc_pins.h"
+#include "map_i2i.h"
+#include "itos.h"
+#include <string.h>
+
+#define MAX_ADC_MEASUREMENTS 10
+
+static uint16_t avgValue;
+static uint8_t  samplesCount;
 
 /**
  * The initialization routine.
@@ -23,6 +33,12 @@
 void init()
 {
     SetupPinAsOD(PB, 5);
+    SetupPinAsFloatingInput(PD, 3);
+    SetupPinAsPP(PA, 3);
+    ADC_WakeUp();
+    ADC_SelectChannel(AIN_PD3);
+    avgValue = 0;
+    samplesCount = 0;
 }
 
 /**
@@ -48,14 +64,49 @@ void loop()
  */
 void tick()
 {
-    static uint16_t counter = 0;
+    static uint16_t count_100ms = 0;
+    static bool     adcRunning = false;
+    static uint16_t measuredVoltage = 0;
+    uint16_t sampledValue = 0;
+    char     sVoltage[8];
+    char    *s;
 
     // Toggle PB5 every 1 second.
 
-    counter++;
-    if (counter == 1000) {
-        counter = 0;
+    count_100ms++;
+    if (count_100ms == 100) {
+        count_100ms = 0;
         PB_ODR ^= BIT(5);
+
+        s = uwtos(measuredVoltage, sVoltage, RADIX_10); // FixMe: !!!!!
+        S_Print(s);
+        S_Put('\n');
     }
+
+    if (adcRunning)
+    {
+        if (ADC_PollReady(&sampledValue)) // Wait until data is ready.
+        {
+            adcRunning = false;
+
+            avgValue += sampledValue;
+            samplesCount++;
+
+            if (samplesCount == MAX_ADC_MEASUREMENTS)
+            {
+                avgValue /= samplesCount;
+                measuredVoltage = map_i2i(avgValue, 0, MAX_ADC_VALUE, 0, 330); // 3V3
+                avgValue = 0;
+                samplesCount = 0;
+            }
+        }
+    }
+    else
+    {
+        ADC_StartConversion();
+        adcRunning = true;
+    }
+
+    PA_ODR ^= BIT(3);
 }
 

@@ -39,4 +39,48 @@
 #define TIM4_UDIS   BIT(1)
 #define TIM4_CEN    BIT(0)
 
+// ADC_CSR   //
+
+/**
+ * A/D Converter End of Conversion Flag bit.<br/>
+ * Register: ADC_CSR.
+ */
+#define ADC_EOC     BIT(7)
+#define ADC_AWD     BIT(6)
+/**
+ * A/D Converter End of Conversion (EOC) Interrupt Enable bit.<br/>
+ * Register: ADC_CSR.
+ */
+#define ADC_EOCIE   BIT(5)
+#define ADC_AWDIE   BIT(4)
+
+#define ADC_CH_BIT3 BIT(3)
+#define ADC_CH_BIT2 BIT(2)
+#define ADC_CH_BIT1 BIT(1)
+#define ADC_CH_BIT0 BIT(0)
+
+// ADC_CR1   //
+
+/**
+ * A/D Converter Continuous Conversion Enable bit.<br/>
+ * Register: ADC_CR1.
+ */
+#define ADC_CONT    BIT(1)
+/**
+ * A/D Converter On/Off bit.<br/>
+ * Register: ADC_CR1.
+ */
+#define ADC_ADON    BIT(0)
+
+// ADC_CR2   //
+
+#define ADC_EXTTRIG BIT(7)
+/**
+ * A/D Converter Data Alignment bit.<br/>
+ * Register: ADC_CR2.
+ */
+#define ADC_ALIGN   BIT(3)
+#define ADC_SCAN    BIT(1)
+
+
 # endif // End of Include Guard //

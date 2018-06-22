@@ -40,5 +40,6 @@ RxSize_t S_Drop(RxSize_t bytesToDrop);
 TxSize_t S_Write(const char *buffer, TxSize_t count);
 RxSize_t S_Read(char *buffer, RxSize_t bufSize);
 TxSize_t S_WriteAwait(const char *buffer, TxSize_t count);
+TxSize_t S_Print(char *s);
 
 # endif // End of Include Guard //

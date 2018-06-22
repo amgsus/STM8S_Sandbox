@@ -8,6 +8,9 @@
 // ***      Modified:   Jun 20, 2018 11:36 PM                             *** //
 // ************************************************************************** //
 
+#include <string.h>
+#include <stdlib.h>
+
 #include "platform.h"
 #include "serial.h"
 
@@ -288,6 +291,13 @@ TxSize_t S_WriteAwait(const char *buffer, TxSize_t count)
     } while (i != count);
 
     return i;
+}
+
+TxSize_t S_Print(char *s)
+{
+    size_t len;
+    len = strlen(s);
+    S_WriteAwait(s, len);
 }
 
 // -------------------------------------------------------------------------- //
