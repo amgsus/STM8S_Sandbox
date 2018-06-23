@@ -35,6 +35,7 @@ void init()
     SetupPinAsOD(PB, 5);
     SetupPinAsFloatingInput(PD, 3);
     SetupPinAsPP(PA, 3);
+    SetupPinAsPP(PD, 4);
     ADC_WakeUp();
     ADC_SelectChannel(AIN_PD3);
     avgValue = 0;
@@ -73,6 +74,8 @@ void tick()
 
     // Toggle PB5 every 1 second.
 
+    PIN(PD, 4, PP_HIGH);
+
     count_100ms++;
     if (count_100ms == 100) {
         count_100ms = 0;
@@ -95,7 +98,9 @@ void tick()
             if (samplesCount == MAX_ADC_MEASUREMENTS)
             {
                 avgValue /= samplesCount;
-                measuredVoltage = map_i2i(avgValue, 0, MAX_ADC_VALUE, 0, 330); // 3V3
+                PIN(PA, 3, PP_HIGH);
+                measuredVoltage = MapValuePrecise(avgValue, 0, MAX_ADC_VALUE, 0, 330); // 3V3
+                PIN(PA, 3, PP_LOW);
                 avgValue = 0;
                 samplesCount = 0;
             }
@@ -107,6 +112,6 @@ void tick()
         adcRunning = true;
     }
 
-    PA_ODR ^= BIT(3);
+    PIN(PD, 4, PP_LOW);
 }
 

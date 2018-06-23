@@ -12,4 +12,16 @@
 #define SET(x, bitMask)     (x |=  (bitMask))
 #define CLEAR(x, bitMask)   (x &= ~(bitMask))
 
+#define ForceBounds(x, minBound, maxBound) \
+    do { \
+        if (x > (maxBound)) { \
+            x = (maxBound); \
+        } else if (x < (minBound)) { \
+            x = (minBound); \
+        } \
+    } while (0)
+
+#define GetValueInBounds(value, minBound, maxBound) \
+    ((value) > (maxBound) ? (maxBound): ((value) < (minBound) ? (minBound) : (value)))
+
 # endif // End of Include Guard //

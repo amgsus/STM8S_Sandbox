@@ -1,19 +1,21 @@
-//int map_i2i(int x, int srcDimMin, int srcDimMax, int dstDimMin, int dstDimMax)
-//{
-//    return (x - srcDimMin) * (dstDimMax - dstDimMin) / (srcDimMax - srcDimMin) + dstDimMin;
-//}
+#include "comdefs.h"
 
-int map_i2i(int x, int srcDimMin, int srcDimMax, int dstDimMin, int dstDimMax)
+int MapValue(int x, int srcDimMin, int srcDimMax, int dstDimMin, int dstDimMax)
 {
-    float a;
+    return (x - srcDimMin) * (dstDimMax - dstDimMin) / (srcDimMax - srcDimMin) + dstDimMin;
+}
+
+int MapValuePrecise(int x, int srcDimMin, int srcDimMax, int dstDimMin,
+                    int dstDimMax)
+{
     int range;
+    float scale;
 
-    if (x < srcDimMin)
-        x = srcDimMin;
-    else if (x > srcDimMax)
-        x = srcDimMax;
+    ForceBounds(x, srcDimMin, srcDimMax);
 
-    a = (float)(x - srcDimMin) / (float)(srcDimMax - srcDimMin);
+    range = srcDimMax - srcDimMin;
+    scale = (float)(x - srcDimMin) / (float)(range);
+
     range = dstDimMax - dstDimMin;
-    return dstDimMin + (int)(a * range);
+    return (dstDimMin + (int)(scale * range));
 }
